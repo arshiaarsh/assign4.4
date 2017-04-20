@@ -1,0 +1,43 @@
+import java.io.*;
+abstract class employee
+{	
+	
+	int basic, net,ta;
+	abstract void netsalary();
+
+}
+class manager extends employee
+{
+	void netsalary()
+	{
+		basic=25000;
+		ta=(15*basic)/100;
+		net=basic+ta;
+		System.out.println("Manager Details is");
+		System.out.println("Baic salary is "+basic);
+		System.out.println("Net salary is "+net);
+	}
+}
+class trainee extends employee
+{
+	void netsalary()
+	{
+		basic=18000;
+		ta=(10*basic)/100;
+		net=basic+ta;
+		System.out.println("Trainee Details is");
+		System.out.println("Baic salary is "+basic);
+		System.out.println("Net salary is "+net);
+	}
+}
+    
+class company
+{
+	public static void main(String args[])throws IOException
+	{
+	        manager m=new manager();
+	        trainee t=new trainee();
+		m.netsalary();
+		t.netsalary();
+	}
+}
